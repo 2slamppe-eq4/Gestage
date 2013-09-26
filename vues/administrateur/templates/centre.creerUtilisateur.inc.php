@@ -36,8 +36,12 @@
             
        $roleMaitreStage=$_GET['role'];
             
-       
-           //affichage de la liste déroulente des roles
+            if (isset($_GET['role'])){
+               echo'<option value="Maitre de stage" selected >Maitre de stage</option>';   
+            }
+          
+          else{
+              //affichage de la liste déroulente des roles
             $tab=array();//variable de stockage des roles
             $cpt=0;
             // création du selecte qui contien les roels !
@@ -47,6 +51,9 @@
                $cpt=$cpt+1;
                
             }
+
+          }
+          
            
             
          ?>  
