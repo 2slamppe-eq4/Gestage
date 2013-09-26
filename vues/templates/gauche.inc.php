@@ -23,7 +23,7 @@
     echo "<li><a href=\".?controleur=administrateur&action=creerUtilisateur\">-Cr&eacute;er un utilisateur</a></li>";
     echo "<li><a href=\".?controleur=administrateur&action=afficherEleve\">-Afficher tout les eleves</a></li>";
     echo "<li><a href=\".?controleur=administrateur&action=creerClasse\">-Cr&eacute;er une classe</a></li>";
-    echo "<li><a href=\".?controleur=administrateur&action=creerMaitreStage\">-Ajouter un maitre de stage</a></li>";
+    echo "<li><a href=\".?controleur=administrateur&action=creerUtilisateur&role=MaitreStage\">-Ajouter un maitre de stage</a></li>";
     
     }
         if(isset($this->loginAuthentification) && MaSession::get('role')!=2){

@@ -1,6 +1,6 @@
 <?php
     // connection à la base de donées
-    $db=mysql_connect('localhost','root','');
+    $db=mysql_connect('localhost','root','joliverie');
     mysql_select_db('GESTAGE',$db);
     //instentiation des donnée
     $chaine='';

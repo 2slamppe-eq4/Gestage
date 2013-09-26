@@ -1,4 +1,0 @@
-GESTSTAGE
-=========
-
-Projet joliverie GESTSTAGE

@@ -7,7 +7,23 @@
 
 <!-- $this->message : à afficher sous le formulaire -->
 <form method="post" action=".?controleur=administrateur&action=validationcreerutilisateur&id=<?php echo $this->id; ?>" name="CreateUser">
-  <h1>Création d'utilisateur</h1>
+  <h1>Creation d'un
+      
+      
+      <?php
+      if (isset($_GET['role'])){
+          
+        echo"maitre de stage";
+      }
+      else{
+          echo"étudiant";
+          
+      }
+  ?>
+      
+  
+      
+  </h1>
     <!-- Choix du type de compte pour affiché les diférente information pour crée un compte spécifique -->
         <fieldset>
           
@@ -18,6 +34,9 @@
             <option value=""></option>
         <?php
             
+       $roleMaitreStage=$_GET['role'];
+            
+       
            //affichage de la liste déroulente des roles
             $tab=array();//variable de stockage des roles
             $cpt=0;
@@ -28,6 +47,7 @@
                $cpt=$cpt+1;
                
             }
+           
             
          ?>  
         </select>
