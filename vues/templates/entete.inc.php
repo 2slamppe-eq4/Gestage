@@ -1,3 +1,5 @@
+<div id="entete">
 
-<br/>
 <h1 id="Titreappli">GestStage V2</h1>
+
+</div>

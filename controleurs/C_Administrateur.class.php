@@ -13,6 +13,10 @@ class C_Administrateur extends Controleur{
                 
         $this->vue->gauche = "../vues/templates/gauche.inc.php";
         
+        $lesEntreprise = new M_ListeEntreprise();
+        $this->vue->lesEntreprise = $lesEntreprise->getAll();       
+       
+       
         $lesOptions = new M_ListeOptions();
         $this->vue->lesOptions = $lesOptions->getAll();
                
@@ -55,9 +59,10 @@ class C_Administrateur extends Controleur{
         
         $lesParametres[8] = $_POST["etudes"];
         $lesParametres[9] = $_POST["formation"];
+        $lesParametres[10] = $_POST["entreprise1"];
         
-        $lesParametres[10] = $_POST["login"];
-        $lesParametres[11] = sha1($_POST["mdp"]);
+        $lesParametres[11] = $_POST["login"];
+        $lesParametres[12] = sha1($_POST["mdp"]);
           
         $ok = $utilisateur->insert($lesParametres);
       }else{
@@ -68,7 +73,7 @@ class C_Administrateur extends Controleur{
         if ($ok) {
             $this->vue->message = "Utilisateur cr&eacute;&eacute;";
         } else {
-            $this->vue->message = "Echec de l'ajout de l'utilisateur".$msg;
+            $this->vue->message = "Echec de l ajout de l utilisateur".$msg;
         }
         $this->vue->afficher();
     }
@@ -97,25 +102,7 @@ class C_Administrateur extends Controleur{
           
           
       }
-      
-       // Fonction d'affichage du formulaire de création d'un maitre de stage
-    function creerMaitreStage(){
-        $this->vue->titreVue = 'Creation maitre de stage';   
-        
-        $this->vue->entete = "../vues/templates/entete.inc.php"; 
-                
-        $this->vue->gauche = "../vues/templates/gauche.inc.php";
-        
-       
-        $this->vue->loginAuthentification = MaSession::get('login');
-       
-        $this->vue->centre = "../vues/administrateur/templates/centre.creerMaitreStage.inc.php";
-        
-        $this->vue->pied = "../vues/templates/pied.inc.php";
-        
-        $this->vue->afficher();
-        
-    }
+
       
 }    
 ?>

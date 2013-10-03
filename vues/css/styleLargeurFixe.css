@@ -5,15 +5,28 @@ body {
     font-size: 0.8em;
     margin:auto;
     width:1050px;
+
+}
+
+#entete{
+    
+    width:1050px;
+    height:100px;
+    float:left;
+    text-align: left;
     border: solid 1px #000000;
 }
 
 
 section{
-    float: left;
-    margin-left: 170px;
+    float: right;
+    margin-left: 0px;
     display: block;
-    width: 600px;
+    width: 710px;
+    border: solid 1px #000000;
+    padding-top:20px;
+    padding-left: 20px;
+    min-height:450px;
 }
 
 h1{
@@ -26,9 +39,10 @@ h1#Titreappli{
 
 nav{
     float: left;
-    display: block;
+    width:300px;
+    float:left;
     text-align: left;
-    width: 250px;
+    border: solid 1px #000000;
 }
 
 nav ul{

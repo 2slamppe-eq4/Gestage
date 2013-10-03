@@ -2,6 +2,7 @@
 <!-- Constantes globales  de includes/version.inc.php -->
 <!-- $this->loginAuthentification : login si authentification ok -->
 <!-- $this->listeCateg : tableau de <Enregistrement> avec les champs 'cat_code' et 'cat_libelle' -->
+<div id="gauche">
 <ul class="menugauche">
     <p><h2>Menu</h2></p><p class="note">
     <li><a href="./index.php" >Accueil</a></li>
@@ -40,3 +41,4 @@
     
     ?>
 </ul>
+</div>
