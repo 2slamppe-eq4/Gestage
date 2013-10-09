@@ -6,6 +6,7 @@
         <title><?php echo $this->titreVue; ?></title>
     </head>
     <body>
+        <div id="global">
             <header>
                <?php include("$this->entete"); ?>
             </header>
@@ -18,5 +19,6 @@
             <footer>
                 <?php include("$this->pied");?>
             </footer>
+        </div>
     </body>
 </html>

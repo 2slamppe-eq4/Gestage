@@ -119,6 +119,8 @@
     <div id="Formulaire_MaitreStage" style="visibility:hidden" height="0">
         <fieldset>
             <legend>Choisir l'entreprise :</legend>
+            
+            <label for="login">Entreprise :</label>
             <select type ="select" id="entreprise1"><!--selecte de choix d'entreprise-->
                 <option value=""></option>
 
@@ -145,7 +147,7 @@
         <input type="text" name="login" id="login"></input><br/>
         <label for="mdp">Mot de passe :</label>
         <input type="password" name="mdp" id="mdp"></input><br/>
-        <label for="mdp2">Retaper votre mot de passe :</label>  <!-- vérification de mots de passe -->
+        <label for="mdp2">Retaper le mot de passe :</label>  <!-- vérification de mots de passe -->
         <input type="password" name="mdp2" id="mdp2"></input><br/>
 
     </fieldset>

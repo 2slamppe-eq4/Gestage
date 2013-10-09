@@ -261,27 +261,40 @@ class C_Utilisateur extends Controleur{
           
           
       }
-     //deuxiéme pages d'ajout d'un stage 
-    function ajoutStageEtapeEntreprise(){
-        $this->vue->titreVue = 'Ajouter un stage Etape 2';   
+    
+      
+      
+      //validation de création stage
+    function validationcreerstage(){
+         $this->vue->titreVue = "Validation cr&eacute;ation stage ";
+        $stage = new M_LesDonneesCreationStage();
+        // préparer la liste des paramètres
+        $lesParametres = array();
+      
+        $lesParametres[0] = $_POST["anneescol"];
+        $lesParametres[1] = $_POST["id_etudiant"];
+        $lesParametres[2] = $_POST["id_professeur_referant"];
+        $lesParametres[3] = $_POST["id_entreprise"];
+        $lesParametres[4] = $_POST["id_maitre_stage"];
+        $lesParametres[5] = $_POST["date_debut"]; 
+        $lesParametres[6] = $_POST["date_fin"]; 
+        $lesParametres[7] = $_POST["date_visite"];
+        $lesParametres[8] = $_POST["ville"]; 
+        $lesParametres[9] = $_POST["divers"]; 
+        $lesParametres[10] = $_POST["bilan_travaux"]; 
+        $lesParametres[11] = $_POST["ressources_outils"]; 
+        $lesParametres[12] = $_POST["commentaires"]; 
+        $lesParametres[13] = $_POST["participation_ccf"]; 
         
-        $this->vue->loginAuthentification = MaSession::get('login');
-        
-        $lesEntreprise = new M_ListeEntreprise();
-        $this->vue->lesEntreprise = $lesEntreprise->getAll();
-       
-        $this->vue->entete = "../vues/templates/entete.inc.php"; 
-                
-        $this->vue->gauche = "../vues/templates/gauche.inc.php"; 
-        
-        $this->vue->centre = "../vues/utilisateur/templates/centre.ajoutStageEtapeEntreprise.inc.php";
-        
-        $this->vue->pied = "../vues/templates/pied.inc.php";
-        
+           $ok = $stage->insert($lesParametres);
+      
+      
+        if ($ok) {
+            $this->vue->message = "Entreprise cr&eacute;&eacute;";
+        } else {
+            $this->vue->message = "Echec de l'ajout de l'entreprise.";
+        }
         $this->vue->afficher();
-          
-          
-          
-      }
+    }
 }
 ?>

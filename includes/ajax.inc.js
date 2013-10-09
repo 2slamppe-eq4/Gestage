@@ -74,7 +74,7 @@
              var value3='';
              value3=$('#fj').val();
              if((value1=='null')&&(value2=='null')&&(value3=='null')){
-                alert("veuillez choisir au moins 1 critére!");
+                alert("veuillez choisir au moins 1 critère!");
              }else{
             $.ajax({
                    type:"GET",

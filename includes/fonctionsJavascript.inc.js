@@ -75,7 +75,7 @@ if (isNaN(document.getElementById('tel').value))
 	}
 if ((document.getElementById('tel').value.length>10)||(document.getElementById('tel').value.length<10))
 	{
-	alert("Votre téléphone ne comporte pas 10 chifre.");
+	alert("Votre téléphone ne comporte pas 10 chiffres.");
 	ok=0;
 	document.getElementById('tel').focus();
 	return false;
@@ -83,14 +83,14 @@ if ((document.getElementById('tel').value.length>10)||(document.getElementById('
 
 if (isNaN(document.getElementById('tel').value))
 	{
-	alert("Votre téléphone protable ne comporte pas uniquement des chiffres. \nVeuillez corriger.");
+	alert("Votre téléphone portable ne comporte pas uniquement des chiffres. \nVeuillez corriger.");
 	ok=0;
 	document.getElementById('tel').focus();
 	return false;
 	}
 if ((document.getElementById('telP').value.length>10)||(document.getElementById('tel').value.length<10))
 	{
-	alert("Votre téléphone portable ne comporte pas 10 chifre.");
+	alert("Votre téléphone portable ne comporte pas 10 chiffres.");
 	ok=0;
 	document.getElementById('tel').focus();
 	return false;
@@ -119,35 +119,35 @@ if (document.getElementById('login').value=="")
 	}
 if (document.getElementById('mdp').value=="")
 	{
-	alert("Veuillez indiquer votre mots de passe.");
+	alert("Veuillez indiquer votre mot de passe.");
 	ok=0;
 	document.getElementById('mdp').focus();
 	return false;
 	}
 if (document.getElementById('mdp').value.length<7)
 	{
-	alert("Votre mots de passe doit comporté au moins 7 caractére.");
+	alert("Votre mot de passe doit comporter au moins 7 caractères.");
 	ok=0;
 	document.getElementById('mdp').focus();
 	return false;
 	}
 if (document.getElementById('mdp2').value=="")
 	{
-	alert("Veuillez indiquer votre vérification de mots de passe.");
+	alert("Veuillez indiquer votre vérification de mot de passe.");
 	ok=0;
 	document.getElementById('mdp2').focus();
 	return false;
 	}
 if (document.getElementById('mdp2').value.length<7)
 	{
-	alert("Votre vérification de mots de passe doit comporté au moins 7 caractére.");
+	alert("Votre vérification de mot de passe doit comporté au moins 7 caractères.");
 	ok=0;
 	document.getElementById('mdp2').focus();
 	return false;
 	}        
 if ((document.getElementById('mdp').value) != (document.getElementById('mdp2').value))
 	{
-	alert("Vos mots de passes sont diférent.");
+	alert("Vos mots de passes sont différents.");
 	ok=0;
 	document.getElementById('mdp').focus();
 	return false;
@@ -246,7 +246,61 @@ if (ok==1) {
 }
 
 
-      
+function validerStage()
+{
+var ok=1;
+
+
+if (document.getElementById('date_debut').value=="")
+	{
+	alert("Veuillez indiquer une date de debut !");
+	ok=0;
+	document.getElementById('date_debut').focus();
+	return false;
+	}
+        
+if (document.getElementById('date_fin').value=="")
+	{
+	alert("Veuillez indiquer une date de fin !");
+	ok=0;
+	document.getElementById('date_fin').focus();
+	return false;
+	}
+        
+if (document.getElementById('date_visite').value=="")
+	{
+	alert("Veuillez indiquer une date de visite !");
+	ok=0;
+	document.getElementById('date_visite').focus();
+	return false;
+	}
+        
+if (document.getElementById('ville').value=="")
+	{
+	alert("Veuillez indiquer une ville!");
+	ok=0;
+	document.getElementById('ville').focus();
+	return false;
+	}
+        
+if (isNaN(document.getElementById('participation_ccf').value))
+	{
+	alert("La participation CCF ne peut être que composé de chiffres !");
+	ok=0;
+	document.getElementById('participation_ccf').focus();
+	return false;
+	}
+        
+if (ok==1) {
+	
+	document.submit();
+        
+	}
+        
+}
+
+
+
     // donction d'impretion
     //function imprimer(){
          ///var impression=document.creatElement("a");

@@ -2,7 +2,7 @@
 
 <!-- $this->message : à afficher sous le formulaire -->
 <form method="post" action=".?controleur=utilisateur&action=validationcreerentreprise&id=<?php echo $this->id; ?>" name="CreateEntreprise">
-    <h1>Création d'entreprise</h1>
+    <h1>Creation d'entreprise</h1>
     <fieldset>
         <legend>Ses informations </legend>
         Tout les champs sont obligatoire sauf note contraire.<br/>
