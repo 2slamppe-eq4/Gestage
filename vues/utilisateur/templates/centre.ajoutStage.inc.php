@@ -20,7 +20,7 @@
         
         
         
-        <legend>Informations inportantes</legend>
+        <legend>Informations importantes</legend>
 
         <label for="id_professeur_referant">*Professeur referant:</label>
         <select name="id_professeur_referant" >
@@ -30,7 +30,7 @@
                 //contenue des ligne du tableau
                    echo'<option value="'.$LesProf->IDPERSONNE.'">'.$LesProf->NOM.' '.$LesProf->PRENOM.'</option>';   
             }
-        ?>     
+        ?>
         </select><br />
         
         
