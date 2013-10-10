@@ -10,17 +10,12 @@
         
         <label for="id_etudiant">*Etudiant:</label>
         <select name="id_etudiant">
-        <?php
-        mysql_connect('localhost', 'root', 'joliverie');
-	mysql_select_db('GESTAGE');
-        $requete1 = mysql_query('SELECT * FROM PERSONNE WHERE IDROLE=4');
-	while ($donnees = mysql_fetch_array($requete1)) // On fait une boucle pour lister les news.
-	{
-	?>		
-        <option value="<?php echo stripslashes($donnees['IDROLE']) ?>"><?php echo stripslashes($donnees['PRENOM']).' '.stripslashes($donnees['NOM']);?></option>
-        <?php  
-        }
-        ?>
+             <?php 
+            foreach ($this->lesEtudiant as $LesEtudiant) { // boucle d'affichage de toute les entreprise
+                //contenue des ligne du tableau
+                   echo'<option value="'.$LesEtudiant->IDPERSONNE.'">'.$LesEtudiant->NOM.' '.$LesEtudiant->PRENOM.'</option>';   
+            }
+        ?>     
         </select><br />
         
         
@@ -29,15 +24,13 @@
 
         <label for="id_professeur_referant">*Professeur referant:</label>
         <select name="id_professeur_referant" >
-        <?php
-        $requete2 = mysql_query('SELECT * FROM PERSONNE WHERE IDROLE=3');
-	while ($donnees = mysql_fetch_array($requete2)) // On fait une boucle pour lister les news.
-	{
-	?>		
-        <option value="<?php echo stripslashes($donnees['IDROLE']) ?>"><?php echo stripslashes($donnees['PRENOM']).' '.stripslashes($donnees['NOM']);?></option>
-        <?php  
-        }
-        ?>
+        
+         <?php 
+            foreach ($this->lesProf as $LesProf) { // boucle d'affichage de toute les entreprise
+                //contenue des ligne du tableau
+                   echo'<option value="'.$LesProf->IDPERSONNE.'">'.$LesProf->NOM.' '.$LesProf->PRENOM.'</option>';   
+            }
+        ?>     
         </select><br />
         
         
@@ -66,28 +59,27 @@
         
         <label for="id_maitre_stage">*Maitre de stage :</label>
         <select name="id_maitre_stage">
-        <?php
-        $requete3 = mysql_query('SELECT * FROM PERSONNE WHERE IDROLE=5');
-	while ($donnees = mysql_fetch_array($requete3)) // On fait une boucle pour lister les news.
-	{
-	?>		
-        <option value="<?php echo stripslashes($donnees['IDROLE']) ?>"><?php echo stripslashes($donnees['PRENOM']).' '.stripslashes($donnees['NOM']);?></option>
-        <?php  
-        }
-        ?>
+        
+         <?php 
+            foreach ($this->lesMaitreDeStage as $LesMaitreDeStage) { // boucle d'affichage de toute les entreprise
+                //contenue des ligne du tableau
+                   echo'<option value="'.$LesMaitreDeStage->IDPERSONNE.'">'.$LesMaitreDeStage->NOM.' '.$LesMaitreDeStage->PRENOM.'</option>';   
+            }
+        ?>  
         </select><br />
+        
+        
+        
+        
         
         <label for="id_entreprise">*Entreprise :</label>
         <select name="id_entreprise">
-        <?php
-        $requete4 = mysql_query('SELECT * FROM ORGANISATION ORDER BY NOM_ORGANISATION');
-	while ($donnees = mysql_fetch_array($requete4)) // On fait une boucle pour lister les news.Entrepr
-	{
-	?>		
-        <option value="<?php echo stripslashes($donnees['IDORGANISATION']) ?>"><?php echo stripslashes($donnees['NOM_ORGANISATION']);?></option>
-        <?php  
-        }Entrepr
-        ?>EntreprEntrepr
+         <?php 
+            foreach ($this->lesOrganisation as $LesOrganisation) { // boucle d'affichage de toute les entreprise
+                //contenue des ligne du tableau
+                   echo'<option value="'.$LesOrganisation->IDORGANISATION.'">'.$LesOrganisation->NOM_ORGANISATION.'</option>';   
+            }
+        ?>  
         </select><br />
         
         <label for="ville">*Ville :</label>

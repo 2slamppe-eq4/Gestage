@@ -241,5 +241,87 @@ abstract class Modele {
     public function setPdo($pdo) {
         $this->pdo = $pdo;
     }
+    
+    
+      function getAllStage() {
+        $pdo = $this->connecter();
+        // Requête textuelle
+        $query = "SELECT p1.NOM AS NOM_ELEVE, p1.PRENOM AS PRENOM_ELEVE, NOM_ORGANISATION,p.NOM AS NOM_PROF, p.PRENOM AS PRENOM_PROF ,DATEDEBUT, DATEFIN, VILLE, DIVERS  FROM " . $this->table . " 
+        INNER JOIN PERSONNE p1 ON STAGE.IDETUDIANT = p1.IDPERSONNE
+        INNER JOIN PERSONNE p ON STAGE.IDPROFESSEUR = p.IDPERSONNE
+        INNER JOIN ORGANISATION ON STAGE.IDORGANISATION = ORGANISATION.IDORGANISATION
+        ORDER BY " . $this->clePrimaire . " DESC";
+        // Exécuter la requête
+        $resultSet = $pdo->query($query);
+        // FETCH_CLASS permet de retourner des enregistrements sous forme d'objets de la classe spécifiée
+        // ici : $this->nomClasseMetier contient "Enregistrement"
+        // La classe Enregistrement est une classe générique vide qui sera automatiquement affublée d'autant
+        // d'attributs publics qu'il y a de colonnes dans le jeu d'enregistrements
+        $retour = $resultSet->fetchAll(PDO::FETCH_CLASS, $this->nomClasseMetier);
+        $this->deconnecter();
+        return $retour;
+    }
 
+    
+    function getAllEtudiant() {
+        $pdo = $this->connecter();
+        // Requête textuelle
+        $query = "SELECT * FROM PERSONNE WHERE IDROLE=4";
+        // Exécuter la requête
+        $resultSet = $pdo->query($query);
+        // FETCH_CLASS permet de retourner des enregistrements sous forme d'objets de la classe spécifiée
+        // ici : $this->nomClasseMetier contient "Enregistrement"
+        // La classe Enregistrement est une classe générique vide qui sera automatiquement affublée d'autant
+        // d'attributs publics qu'il y a de colonnes dans le jeu d'enregistrements
+        $retour = $resultSet->fetchAll(PDO::FETCH_CLASS, $this->nomClasseMetier);
+        $this->deconnecter();
+        return $retour;
+    }
+    
+    function getAllProf() {
+        $pdo = $this->connecter();
+        // Requête textuelle
+        $query = "SELECT * FROM PERSONNE WHERE IDROLE=3";
+        // Exécuter la requête
+        $resultSet = $pdo->query($query);
+        // FETCH_CLASS permet de retourner des enregistrements sous forme d'objets de la classe spécifiée
+        // ici : $this->nomClasseMetier contient "Enregistrement"
+        // La classe Enregistrement est une classe générique vide qui sera automatiquement affublée d'autant
+        // d'attributs publics qu'il y a de colonnes dans le jeu d'enregistrements
+        $retour = $resultSet->fetchAll(PDO::FETCH_CLASS, $this->nomClasseMetier);
+        $this->deconnecter();
+        return $retour;
+    }
+
+    
+    function getAllMaitreDeStage() {
+        $pdo = $this->connecter();
+        // Requête textuelle
+        $query = "SELECT * FROM PERSONNE WHERE IDROLE=5";
+        // Exécuter la requête
+        $resultSet = $pdo->query($query);
+        // FETCH_CLASS permet de retourner des enregistrements sous forme d'objets de la classe spécifiée
+        // ici : $this->nomClasseMetier contient "Enregistrement"
+        // La classe Enregistrement est une classe générique vide qui sera automatiquement affublée d'autant
+        // d'attributs publics qu'il y a de colonnes dans le jeu d'enregistrements
+        $retour = $resultSet->fetchAll(PDO::FETCH_CLASS, $this->nomClasseMetier);
+        $this->deconnecter();
+        return $retour;
+    }
+    
+    function getAllOrganisation() {
+        $pdo = $this->connecter();
+        // Requête textuelle
+        $query = "SELECT * FROM ORGANISATION ORDER BY NOM_ORGANISATION";
+        // Exécuter la requête
+        $resultSet = $pdo->query($query);
+        // FETCH_CLASS permet de retourner des enregistrements sous forme d'objets de la classe spécifiée
+        // ici : $this->nomClasseMetier contient "Enregistrement"
+        // La classe Enregistrement est une classe générique vide qui sera automatiquement affublée d'autant
+        // d'attributs publics qu'il y a de colonnes dans le jeu d'enregistrements
+        $retour = $resultSet->fetchAll(PDO::FETCH_CLASS, $this->nomClasseMetier);
+        $this->deconnecter();
+        return $retour;
+    }
+    
 }

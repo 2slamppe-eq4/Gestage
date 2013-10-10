@@ -243,11 +243,30 @@ class C_Utilisateur extends Controleur{
     function ajoutStage(){
         $this->vue->titreVue = 'Ajouter un stage';   
         
+        //on verifie que l'on soit login
         $this->vue->loginAuthentification = MaSession::get('login');
         
-        $lesFormations = new M_ListeFormations();
-        $this->vue->lesFormations = $lesFormations->getAll(); 
+        //on recupere la liste des etudiants
+        $lesEtudiant = new M_ListeEtudiantBis();
+        
+        $this->vue->lesEtudiant = $lesEtudiant->getAllEtudiant();
+        
+        //on recupere la liste des profs
+        $lesProf = new M_ListeProf();
+        
+        $this->vue->lesProf = $lesProf->getAllProf();
+        
+        //on recupere la liste des maitres de stage
+        $lesMaitreDeStage = new M_ListeMaitreDeStage();
+        
+        $this->vue->lesMaitreDeStage = $lesProf->getAllMaitreDeStage();
+        
+        //on recupere la liste des organisations
+        $lesOrganisation = new M_ListeOrganisation();
+        
+        $this->vue->lesOrganisation = $lesOrganisation->getAllOrganisation();
        
+        //on cree la vue avec les templates
         $this->vue->entete = "../vues/templates/entete.inc.php"; 
                 
         $this->vue->gauche = "../vues/templates/gauche.inc.php"; 
@@ -290,11 +309,38 @@ class C_Utilisateur extends Controleur{
       
       
         if ($ok) {
-            $this->vue->message = "Entreprise cr&eacute;&eacute;";
+            $this->vue->message = "Stage cr&eacute;&eacute;";
         } else {
             $this->vue->message = "Echec de l'ajout de l'entreprise.";
         }
         $this->vue->afficher();
     }
+    
+    // affichage du choix de l'affichage des entrepris
+    function afficheListeStage(){
+        $this->vue->titreVue = 'Liste des stages';   
+        
+        $this->vue->loginAuthentification = MaSession::get('login');
+        
+        $lesStage = new M_ListeStage();
+        
+        $this->vue->lesStage = $lesStage->getAllStage();
+        
+        
+      
+               
+        $this->vue->entete = "../vues/templates/entete.inc.php"; 
+                
+        $this->vue->gauche = "../vues/templates/gauche.inc.php"; 
+        
+        $this->vue->centre = "../vues/utilisateur/templates/centre.afficherListeStage.inc.php";
+        
+        $this->vue->pied = "../vues/templates/pied.inc.php";
+        
+        $this->vue->afficher();
+          
+          
+          
+      }
 }
 ?>
