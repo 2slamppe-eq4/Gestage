@@ -40,13 +40,13 @@ body {
     height:100px;
     float:left;
     text-align: left;
-    border-bottom: solid 10px #000000;
+    border-bottom: solid 2px #000000;
 }
 
 span.deconnexion{
     float:right;
     margin-right:50px;
-    margin-top:-50px;
+    margin-top:-44px;
 }
 
 #footer{
@@ -55,7 +55,7 @@ span.deconnexion{
     height:70px;
     float:left;
     text-align: left;
-    border-top: solid 10px #000000;
+    border-top: solid 2px #000000;
     margin-top:0px;
     padding-top:20px;
 }
@@ -71,7 +71,7 @@ section{
     margin-left: 0px;
     display: block;
     width: 690px;
-    border-left: solid 10px #000000;
+    border-left: solid 2px #000000;
     margin-top:0px;
     padding:20px;
     min-height:440px;

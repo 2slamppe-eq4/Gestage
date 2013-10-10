@@ -265,6 +265,11 @@ class C_Utilisateur extends Controleur{
         $lesOrganisation = new M_ListeOrganisation();
         
         $this->vue->lesOrganisation = $lesOrganisation->getAllOrganisation();
+        
+        //on recupere la liste des annees scolaires
+        $lesAnneesScolaire = new M_ListeAnneesScolaire();
+        
+        $this->vue->lesAnneesScolaire = $lesAnneesScolaire->getAllAnneesScolaire();
        
         //on cree la vue avec les templates
         $this->vue->entete = "../vues/templates/entete.inc.php"; 
@@ -311,7 +316,7 @@ class C_Utilisateur extends Controleur{
         if ($ok) {
             $this->vue->message = "Stage cr&eacute;&eacute;";
         } else {
-            $this->vue->message = "Echec de l'ajout de l'entreprise.";
+            $this->vue->message = "Echec de l'ajout du stage.";
         }
         $this->vue->afficher();
     }

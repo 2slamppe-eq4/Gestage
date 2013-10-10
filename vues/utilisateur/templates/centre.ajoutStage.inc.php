@@ -41,7 +41,15 @@
     <fieldset>
         <legend>Date de stage :</legend>
         
-        <input type="hidden" name="anneescol" value="<?php echo date("Y"); ?>"></input>
+        <label for="date_debut">*Annee scolaire</label>
+        <select name="anneescol">
+        <?php 
+            foreach ($this->lesAnneesScolaire as $LesAnneesScolaire) { // boucle d'affichage de toute les entreprise
+                //contenue des ligne du tableau
+                   echo'<option value="'.$LesAnneesScolaire->ANNEESCOL.'">'.$LesAnneesScolaire->ANNEESCOL.'</option>';   
+            }
+        ?>  
+	</select><br />
 		
         <label for="date_debut">*Date debut : (YYYY-MM-DD )</label>
         <input type="text" name="date_debut" id="date_debut" ></input><br/>

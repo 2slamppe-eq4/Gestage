@@ -2,6 +2,7 @@
         
      <h1>Liste des stages (du plus nouveau au plus ancien) </h1>
         <tr>
+            <th>Exporter</th>
             <th>Etudiant</th>
             <th>Entreprise</th>
             <th>Professeur</th>
@@ -16,6 +17,7 @@
                 //contenue des ligne du tableau
                    echo'
                        <tr>
+                       <td>Exporter .csv</td>
                        <td>'.$LesStage->NOM_ELEVE.' '.$LesStage->PRENOM_ELEVE.'</td>
                        <td>'.$LesStage->NOM_ORGANISATION.'</td>
                        <td>'.$LesStage->NOM_PROF.' '.$LesStage->PRENOM_PROF.'</td>
